@@ -1,0 +1,133 @@
+[
+    {
+        "id": 1,
+        "module_id": 2,
+        "route_path": "/createUser",
+        "auth_required": "0",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "user",
+            "created_at": null,
+            "updated_at": null
+        }
+    },
+    {
+        "id": 2,
+        "module_id": 2,
+        "route_path": "/login",
+        "auth_required": "0",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "user",
+            "created_at": null,
+            "updated_at": null
+        }
+    },
+    {
+        "id": 3,
+        "module_id": 2,
+        "route_path": "/getUser",
+        "auth_required": "1",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "user",
+            "created_at": null,
+            "updated_at": null
+        }
+    },
+    {
+        "id": 4,
+        "module_id": 2,
+        "route_path": "/deleteUser",
+        "auth_required": "1",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "user",
+            "created_at": null,
+            "updated_at": null
+        }
+    },
+    {
+        "id": 5,
+        "module_id": 2,
+        "route_path": "/updateUser",
+        "auth_required": "1",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "user",
+            "created_at": null,
+            "updated_at": null
+        }
+    },
+    {
+        "id": 6,
+        "module_id": 2,
+        "route_path": "/logout",
+        "auth_required": "1",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "user",
+            "created_at": null,
+            "updated_at": null
+        }
+
+    },
+    {
+        "id": 7,
+        "module_id": 2,
+        "route_path": "/createEvent",
+        "auth_required": "0",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "event",
+            "created_at": null,
+            "updated_at": null
+        }
+
+    },
+    {
+        "id": 8,
+        "module_id": 2,
+        "route_path": "/createStore",
+        "auth_required": "0",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "event",
+            "created_at": null,
+            "updated_at": null
+        }
+
+    },
+
+    {
+        "id": 9,
+        "module_id": 2,
+        "route_path": "/calculateMetrics",
+        "auth_required": "0",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "event",
+            "created_at": null,
+            "updated_at": null
+        }
+
+    }
+]

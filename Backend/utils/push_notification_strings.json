@@ -1,0 +1,126 @@
+{
+    "en": {
+        "notification": {
+            "feature": {
+                "id": "feature",
+                "no_invoice": {
+                    "id":"no_invoice",
+                    "title": "Time To Make Money",
+                    "body": "Power Up Your Business By Creating Your First Invoice!",
+                    "type": "1",
+                    "category": "1"
+                },
+                "no_logo": {
+                    "id":"no_logo",
+                    "title": "Upgrade your invoices",
+                    "body": "Add your logo and signature to brand your billing",
+                    "type": "2",
+                    "category": "1"
+                },
+                "no_invoice_num": {
+                    "id":"no_invoice_num",
+                    "title": "Save Time",
+                    "body": "Use invoice numbers to keep your documents organized",
+                    "type": "3",
+                    "category": "1"
+                },
+                "no_discount": {
+                    "id":"no_discount",
+                    "title": "Put Your Customers First",
+                    "body": "Add custom discounts to make your customers feel special",
+                    "type": "4",
+                    "category": "1"
+                },
+                "no_due_date": {
+                    "id":"no_due_date",
+                    "title": "Save money by staying organized",
+                    "body": "Add due dates to remind you when invoices are due.",
+                    "type": "5",
+                    "category": "1"
+                },
+                "free_trial_expired": {
+                    "id":"free_trial_expired",
+                    "title": "Now Is The Best Time To Upgrade",
+                    "body": "Unlimited invoices for one month for $XX.XX",
+                    "type": "6",
+                    "category": "1"
+                },
+                "overdue_invoice": {
+                    "id":"overdue_invoice",
+                    "title": "Overdue Invoice",
+                    "body": "You Have {{invoices_length}} Invoice Marked As Overdue. Mark It Paid Now?",
+                    "type": "7",
+                    "category": "1"
+                },
+                "overdue_invoice_specific": {
+                    "id":"overdue_invoice_specific",
+                    "title": "Overdue Invoice",
+                    "body": "One Invoice To {{customer_name}} was due {{x}} days ago. Ready To Mark It Paid?",
+                    "type": "8",
+                    "category": "1"
+                },
+                "package_upgrade": {
+                    "id":"package_upgrade",
+                    "title": "Now Is The Best Time To Upgrade",
+                    "body": "Unlimited invoices for one month for {{price}}",
+                    "type": "9",
+                    "category": "1"
+                }
+            },
+            "confirmation": {
+                "id": "confirmation",
+                "email_verified": {
+                    "id":"email_verified",
+                    "title": "ReckDeck",
+                    "body": "Your Email has been verified",
+                    "type": "1",
+                    "category": "2"
+                }
+            },
+            "greetings": {
+                "id": "greetings",
+                "monday": {
+                    "id":"monday",
+                    "title": "ReckDeck",
+                    "body": "Welcome to ReckDeck",
+                    "type": "1",
+                    "category": "3"
+                }
+            }
+        }
+    },
+    "ar": {
+        "no_invoice": {
+            "title": "Time To Make Money",
+            "body": "Power Up Your Business By Creating Your First Invoice!"
+        },
+        "no_logo": {
+            "title": "Upgrade your invoices",
+            "body": "Add your logo and signature to brand your billing"
+        },
+        "no_invoice_no": {
+            "title": "Save Time",
+            "body": "Use invoice numbers to keep your documents organized"
+        },
+        "no_discount": {
+            "title": "Put Your Customers First",
+            "body": "Add custom discounts to make your customers feel special"
+        },
+        "no_due_date": {
+            "title": "Save money by staying organized",
+            "body": "Add due dates to remind you when invoices are due."
+        },
+        "free_trial_expired": {
+            "title": "Now Is The Best Time To Upgrade",
+            "body": "Unlimited invoices for one month for $XX.XX"
+        },
+        "overdue_invoice": {
+            "title": "Overdue Invoice",
+            "body": "You Have One Invoice Marked As Overdue. Mark It Paid Now?"
+        },
+        "overdue_invoice_specific": {
+            "title": "Overdue Invoice",
+            "body": "`One Invoice To ${customer name} was due X days ago. Ready To Mark It Paid?`"
+        }
+    }
+}

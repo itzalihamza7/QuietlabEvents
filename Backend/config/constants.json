@@ -1,0 +1,83 @@
+{  "keys_length": {
+    "otp": 6,
+    "password": 10,
+    "access_token": 40,
+    "refresh_token": 32,
+    "index_separator": "__",
+    "reset_password_token": 20
+    },
+    "auths": {
+        "role": {
+            "devops": "#devOps!",
+            "alien": "#alien!",
+            "cms": "#cms!"
+        },
+        "keys": {
+            "initial": "@reck&Deck%",
+            "push_cronjobs": "&push#Auth$",
+            "email_cronjobs": "&email#Auth$",
+            "admin": "$super%Admin&"
+        }
+    },
+    "services_base_urls": {
+        "localhost": {
+            "reck_deck": "http://localhost:3000"
+        },
+        "staging": {
+            "reck_deck": "http://localhost:3000"
+        },
+        "production": {
+            "reck_deck": "http://localhost:3000"
+        }
+    },
+    "web_app": {
+        "base_urls": {
+            "localhost": "http://localhost:3000/",
+            "staging": "http://localhost:3000/",
+            "production": "http://localhost:3000/"
+        },
+        "reset_password_path": "resetPassword?code=",
+        "verify_email_path": "verifyEmail?code="
+    },
+    "s3-bucket": {
+        "access_key": "",
+        "secret_access_key": "",
+        "bucket_name": "",
+        "region": "us-east-1",
+        "directories": {
+            "documents": "docs/"
+        },
+        "container": {
+            "localhost": "dev/",
+            "staging": "staging/",
+            "production": "production/"
+        },
+        "base_url": {
+            "localhost": "http://localhost:3000/dev/",
+            "staging": "http://localhost:3000/staging/",
+            "production": "http://localhost:3000/production/"
+        }
+    },
+    "aws_ses": {
+        "region": "us-east-1",
+        "access_key_id": "",
+        "secret_access_key": ""
+    },
+    "email_types": {
+            "verify_account": {
+                "type": "verify_account",
+                "subject": "Please verify your email address"
+            },
+            "delete_account": {
+                "type": "delete_account",
+                "subject": "Confirmation of ReckDeck Invoice Account Deletion"
+            }
+        
+    },
+    "google_api_client_library": "",
+    "facebook_graph_api": "",
+    "token_expiry_time": 15552000000,
+    "token_expiry_time_comment": "// setting 180 = 6 months (180*24 hours) * 10  i-e 60*60*24*180 = 2592000 * 1000",
+    "char_set": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
+    "data_set": "bhjglyoqck829ufxvtmrew513z4i067pnasd"
+}
