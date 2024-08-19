@@ -1,0 +1,25 @@
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are shared between cells */
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd; /* Adds border to table cells */
+}
+
+.table th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #ddd; /* Adds a thicker border to header cells */
+}
+
+.table tr {
+    border-bottom: 1px solid #ddd; /* Adds a border below each row */
+}
+
+.table tr:hover {
+    background-color: #f5f5f5; /* Highlights row on hover */
+}

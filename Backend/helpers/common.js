@@ -116,10 +116,11 @@ const checkRouteExist = function (key) {
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const functionCodeList = JSON.parse(jsonData);
     // console.log("functionCodeList :", functionCodeList);
-     
+    const url = new URL(key, 'http://example.com'); // Use a dummy base URL
+    const cleanPath = url.pathname;
     // Check if the key exists in the JSON object
     for (const obj of functionCodeList) {
-        if (obj.route_path === key) {
+        if (obj.route_path === cleanPath) {
           return obj;
         }
       }

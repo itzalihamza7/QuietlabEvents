@@ -1,0 +1,1 @@
+This app is for registering the shopify events

@@ -1,0 +1,46 @@
+.dashboard-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.logout-button {
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.filters-form {
+    flex: 1;
+    max-width: 400px; /* Adjust as needed */
+}
+
+.metrics-table {
+    flex: 2;
+    overflow-x: auto; /* Helps with responsive design */
+    max-width: calc(100% - 400px); /* Ensures the table fits within the container */
+}

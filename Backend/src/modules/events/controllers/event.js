@@ -82,7 +82,7 @@ const createEvent = async (req, res, next) => {
 
 const calculateMetrics = async (req, res, next) => {
     try {
-        let { store_id, offer_url, offer_template, start_date, end_date } = req.body;
+        let { store_id, offer_url, offer_template, start_date, end_date } = req.query;
 
         // Validate required parameters
         if (!store_id) {
