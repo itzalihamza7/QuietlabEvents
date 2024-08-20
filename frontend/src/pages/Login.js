@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { login } from '../services/authService.js';
 import FormInput from '../components/FormInput.js';
 import { useNavigate } from 'react-router-dom';
+import '../assets/Login.css'; // Add this if you need specific styling for the login page
 
 const Login = () => {   
     const [email, setEmail] = useState('');
@@ -25,8 +26,11 @@ const Login = () => {
     };
 
     return (
+        <div className="login-page">
+            <h1>QuietLab Events Dashboard</h1>
         <div className="login-container">
-            <h2>Login</h2>
+            
+            <h1 className="login-heading">Login</h1>
             {error && <div className="error">{error}</div>}
             <form onSubmit={handleLogin}>
                 <FormInput
@@ -45,6 +49,7 @@ const Login = () => {
                 />
                 <button type="submit" className="btn btn-primary">Login</button>
             </form>
+        </div>
         </div>
     );
 };

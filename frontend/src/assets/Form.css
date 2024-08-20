@@ -1,3 +1,5 @@
+/* Form.css */
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -7,27 +9,27 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-}
-
-.form-group {
+  }
+  
+  .form-group {
     margin-bottom: 15px;
-}
-
-.form-group label {
+  }
+  
+  .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
+  }
+  
+  .form-group input,
+  .form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.submit-button {
+  }
+  
+  .submit-button {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -35,4 +37,19 @@
     color: #fff;
     cursor: pointer;
     font-size: 16px;
-}
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .create-store-form {
+    /* This class will have the same styling as .form-container */
+  }
+  
+  .create-store-form h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

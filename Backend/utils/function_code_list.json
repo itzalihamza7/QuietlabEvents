@@ -2,7 +2,7 @@
     {
         "id": 1,
         "module_id": 2,
-        "route_path": "/createUser",
+        "route_path": "/api/createUser",
         "auth_required": "0",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
@@ -16,7 +16,7 @@
     {
         "id": 2,
         "module_id": 2,
-        "route_path": "/login",
+        "route_path": "/api/login",
         "auth_required": "0",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
@@ -30,7 +30,7 @@
     {
         "id": 3,
         "module_id": 2,
-        "route_path": "/getUser",
+        "route_path": "/api/getUser",
         "auth_required": "1",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
@@ -44,7 +44,7 @@
     {
         "id": 4,
         "module_id": 2,
-        "route_path": "/deleteUser",
+        "route_path": "/api/deleteUser",
         "auth_required": "1",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
@@ -58,7 +58,7 @@
     {
         "id": 5,
         "module_id": 2,
-        "route_path": "/updateUser",
+        "route_path": "/api/updateUser",
         "auth_required": "1",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
@@ -72,7 +72,7 @@
     {
         "id": 6,
         "module_id": 2,
-        "route_path": "/logout",
+        "route_path": "/api/logout",
         "auth_required": "1",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
@@ -87,7 +87,7 @@
     {
         "id": 7,
         "module_id": 2,
-        "route_path": "/createEvent",
+        "route_path": "/api/createEvent",
         "auth_required": "0",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
@@ -102,8 +102,8 @@
     {
         "id": 8,
         "module_id": 2,
-        "route_path": "/createStore",
-        "auth_required": "0",
+        "route_path": "/api/createStore",
+        "auth_required": "1",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,
         "privilege": {
@@ -118,7 +118,22 @@
     {
         "id": 9,
         "module_id": 2,
-        "route_path": "/calculateMetrics",
+        "route_path": "/api/calculateMetrics",
+        "auth_required": "1",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "event",
+            "created_at": null,
+            "updated_at": null
+        }
+
+    },
+    {
+        "id": 10,
+        "module_id": 2,
+        "route_path": "/api/getAllStores",
         "auth_required": "1",
         "created_at": "2023-11-17T17:39:54.000Z",
         "updated_at": null,

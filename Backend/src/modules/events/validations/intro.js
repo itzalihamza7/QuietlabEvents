@@ -24,6 +24,14 @@ ValidationRules.rule = (method) => {
                 check('country').notEmpty().withMessage("required").isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
             ];
         }
+
+        case 'calculateMetrics': {
+            return [
+            check('store_id').notEmpty().withMessage("required"),
+            check('start_date').notEmpty().withMessage("required").isDate().withMessage("invalid_value"),
+            check('end_date').notEmpty().withMessage("required").isDate().withMessage("invalid_value"),
+            ];
+        }
     }
 };
 

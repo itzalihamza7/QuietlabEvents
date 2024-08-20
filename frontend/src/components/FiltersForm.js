@@ -1,12 +1,45 @@
-import React, { useState } from 'react';
-import '../assets/FiltersForm.css'; // Adjust the path based on your folder structure
+import React, { useState, useEffect } from 'react';
+import { getAllStores } from '../services/storeService'; // Adjust the path based on your structure
+import '../assets/Form.css'; // Adjust the path based on your folder structure
 
 const FiltersForm = ({ onSubmit }) => {
-  const [storeId, setStoreId] = useState('1'); // Default to Germany (ID: 1)
+  const [stores, setStores] = useState([]);
+  const [storeId, setStoreId] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [offerUrl, setOfferUrl] = useState('');
   const [offerTemplate, setOfferTemplate] = useState('');
+  const [currentUrl, setCurrentUrl] = useState(window.location.href);
+
+  useEffect(() => {
+    const fetchStores = async () => {
+      try {
+        const storesData = await getAllStores();
+        setStores(storesData);
+        setStoreId(storesData[0]?.id || ''); // Set default store if available
+      } catch (error) {
+        console.error('Error loading stores:', error);
+      }
+    };
+
+    fetchStores();
+  }, [currentUrl]); // Depend on currentUrl to re-fetch stores when URL changes
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentUrl(window.location.href);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('pushState', handlePopState);
+    window.addEventListener('replaceState', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('pushState', handlePopState);
+      window.removeEventListener('replaceState', handlePopState);
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,9 +50,12 @@ const FiltersForm = ({ onSubmit }) => {
     <form onSubmit={handleSubmit} className="form-container">
       <div className="form-group">
         <label>Store:</label>
-        <select value={storeId} onChange={(e) => setStoreId(e.target.value)}>
-          <option value="1">Germany</option>
-          <option value="2">Italy</option>
+        <select value={storeId} onChange={(e) => setStoreId(e.target.value)} required>
+          {stores.map((store) => (
+            <option key={store.id} value={store.id}>
+              {store.name}
+            </option>
+          ))}
         </select>
       </div>
 

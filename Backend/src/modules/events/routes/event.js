@@ -10,7 +10,8 @@ let routes = function () {
 
     routes.route("/createStore").post(eventRules.rule('createStore'), Validation.validate, event.createStore);
     routes.route("/createEvent").post(eventRules.rule('createEvent'), Validation.validate, event.createEvent);
-    routes.route("/calculateMetrics").get(event.calculateMetrics);
+    routes.route("/calculateMetrics").get(eventRules.rule('calculateMetrics'), Validation.validate, event.calculateMetrics);
+    routes.route("/getAllStores").get(event.getAllStores);
    
 
     return routes;

@@ -68,8 +68,8 @@ app.use(require("./middleware/authorization"));
 app.use(request_parser);
 //------------------------------------//
 
-app.use("/", require("./src/modules/events/app")());
-app.use("/", require("./src/modules/user/app")());
+app.use("/api/", require("./src/modules/events/app")());
+app.use("/api/", require("./src/modules/user/app")());
 //------------------------------------//
 app.use(not_found);
 app.use(response_handler);

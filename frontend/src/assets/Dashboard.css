@@ -1,46 +1,51 @@
 .dashboard-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-.navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .navbar {
+    display: flex;
     align-items: center;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.logout-button {
-    background-color: #dc3545;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.logout-button:hover {
-    background-color: #c82333;
-}
-
-.content {
-    display: flex;
     justify-content: space-between;
-    gap: 20px;
-}
+    background-color: #033061; /* Blue background */
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .navbar-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
 
-.filters-form {
-    flex: 1;
-    max-width: 400px; /* Adjust as needed */
-}
+  .events-button{
+    margin-left: 30px;
+  }
 
-.metrics-table {
-    flex: 2;
-    overflow-x: auto; /* Helps with responsive design */
-    max-width: calc(100% - 400px); /* Ensures the table fits within the container */
-}
+  .events-button,
+  .create-store-button {
+    background-color: #1145e2;
+    border: none;
+    padding: 8px 16px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px; 
+    /* Space between buttons */
+  }
+  
+  .logout-button {
+    background-color: #ff4d4f;
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .content {
+    padding: 20px;
+    flex-grow: 1;
+  }
+  

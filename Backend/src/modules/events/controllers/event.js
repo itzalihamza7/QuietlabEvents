@@ -154,12 +154,27 @@ const calculateMetrics = async (req, res, next) => {
     }
 };
 
+const getAllStores = async (req, res, next) => {
+    try {
+        // Fetch all stores from the database
+        const stores = await sequelize.models.stores.findAll({
+            attributes: ['id', 'name', 'country'],
+            order: [['name', 'ASC']] // Optional: Sort by store name in ascending order
+        });
 
+        // Send success response
+        return res.status(200).json(stores);
+    } catch (error) {
+        // Handle errors
+        return next(error);
+    }
+};
     
 
 module.exports = {
     createEvent,
     createStore,
-    calculateMetrics
+    calculateMetrics,
+    getAllStores
 };
 
