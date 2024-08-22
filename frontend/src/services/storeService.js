@@ -1,12 +1,14 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:5000';
+import  BASE_URL from '../constants.js';
+
 const user = JSON.parse(localStorage.getItem('user'));
 
 export const getAllStores = async () => {
+    console.log(BASE_URL)
     
 
     try {
-        const response = await axios.get(`${BASE_URL}/api/getAllStores`, {
+        const response = await axios.get(`${BASE_URL}/getAllStores`, {
             headers: {
                 Authorization: `${user.access_token}`,
             },
@@ -20,7 +22,7 @@ export const getAllStores = async () => {
 
 export const createStore = async (storeData) => {
     try {
-        const response = await axios.post(`${BASE_URL}/api/createStore`, storeData, {
+        const response = await axios.post(`${BASE_URL}/createStore`, storeData, {
             headers: {
                 'Authorization': `${user.access_token}`,
                 'Content-Type': 'application/json'

@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log(process.env.BASE_URL);
 root.render(
-    <React.StrictMode>
+    
+        
         <App />
-    </React.StrictMode>
+
 );

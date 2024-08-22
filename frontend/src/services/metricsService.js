@@ -1,8 +1,9 @@
 import axios from 'axios';
 import qs from 'qs';
+import BASE_URL from '../constants.js';
+
 
 export const calculateMetrics = async (filters) => {
-    const BASE_URL = 'http://localhost:5000/api';
     try {
         const queryString = qs.stringify(filters);
         const user = JSON.parse(localStorage.getItem('user'));

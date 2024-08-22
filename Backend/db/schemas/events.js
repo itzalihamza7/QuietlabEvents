@@ -1,15 +1,15 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function (sequelize) {
     const Events = sequelize.define("events", {
         id: {
-            type: Sequelize.BIGINT,
+            type: DataTypes.BIGINT,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         store_id: {
-            type: Sequelize.BIGINT,
+            type: DataTypes.BIGINT,
             allowNull: false,
             references: {
                 model: 'stores',
@@ -17,41 +17,53 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         offer_name: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         offer_url: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         offer_template: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         visited: {
-            type: Sequelize.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
         },
         purchased: {
-            type: Sequelize.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
         },
         purchase_value: {
-            type: Sequelize.FLOAT,
+            type: DataTypes.FLOAT,
             allowNull: true,
             defaultValue: 0.0
         },
         upsell: {
-            type: Sequelize.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
         },
         upsell_value: {
-            type: Sequelize.FLOAT,
+            type: DataTypes.FLOAT,
             allowNull: true,
             defaultValue: 0.0
+        },
+        order_id: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        line_items: {
+            type: DataTypes.STRING, 
+            allowNull: true
+        },
+        user_id: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     }, {
         tableName: "events",

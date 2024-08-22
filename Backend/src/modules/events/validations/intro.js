@@ -16,6 +16,9 @@ ValidationRules.rule = (method) => {
                 check('purchase_value').optional().isFloat().withMessage("invalid_value"),
                 check('upsell').optional().isBoolean().withMessage("invalid_value"),
                 check('upsell_value').optional().isFloat().withMessage("invalid_value"),
+                check('order_id').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
+                check('line_items').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
+                check('user_id').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
             ];
         }
         case 'createStore': {
@@ -30,6 +33,23 @@ ValidationRules.rule = (method) => {
             check('store_id').notEmpty().withMessage("required"),
             check('start_date').notEmpty().withMessage("required").isDate().withMessage("invalid_value"),
             check('end_date').notEmpty().withMessage("required").isDate().withMessage("invalid_value"),
+            ];
+        }
+
+        case 'updateEvent': {
+            return [
+                check('store_id').optional().isInt().withMessage("invalid_value"),
+                check('offer_name').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
+                check('offer_url').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
+                check('offer_template').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
+                check('visited').optional().isBoolean().withMessage("invalid_value"),
+                check('purchased').optional().isBoolean().withMessage("invalid_value"),
+                check('purchase_value').optional().isFloat().withMessage("invalid_value"),
+                check('upsell').optional().isBoolean().withMessage("invalid_value"),
+                check('upsell_value').optional().isFloat().withMessage("invalid_value"),
+                check('order_id').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
+                check('line_items').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
+                check('user_id').optional().isString().trim().withMessage("invalid_value").isLength({ max: 255 }).withMessage('Length Limit exceeded'),
             ];
         }
     }

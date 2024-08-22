@@ -144,5 +144,20 @@
             "updated_at": null
         }
 
+    },
+    {
+        "id": 10,
+        "module_id": 2,
+        "route_path": "/api/updateEvent",
+        "auth_required": "0",
+        "created_at": "2023-11-17T17:39:54.000Z",
+        "updated_at": null,
+        "privilege": {
+            "id": 2,
+            "module_name": "event",
+            "created_at": null,
+            "updated_at": null
+        }
+
     }
 ]

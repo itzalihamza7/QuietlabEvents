@@ -12,6 +12,7 @@ let routes = function () {
     routes.route("/createEvent").post(eventRules.rule('createEvent'), Validation.validate, event.createEvent);
     routes.route("/calculateMetrics").get(eventRules.rule('calculateMetrics'), Validation.validate, event.calculateMetrics);
     routes.route("/getAllStores").get(event.getAllStores);
+    routes.route("/updateEvent").put(eventRules.rule('updateEvent'), Validation.validate, event.updateEvent);
    
 
     return routes;

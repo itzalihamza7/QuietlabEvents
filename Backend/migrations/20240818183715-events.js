@@ -5,9 +5,9 @@ module.exports = {
         await queryInterface.createTable('events', {
             id: {
                 type: Sequelize.BIGINT,
-                primaryKey: true,
                 allowNull: false,
-                autoIncrement: true
+                autoIncrement: true,
+                primaryKey: true
             },
             store_id: {
                 type: Sequelize.BIGINT,
@@ -15,9 +15,7 @@ module.exports = {
                 references: {
                     model: 'stores',
                     key: 'id'
-                },
-                onUpdate: 'CASCADE',
-                onDelete: 'CASCADE'
+                }
             },
             offer_name: {
                 type: Sequelize.STRING,
@@ -56,16 +54,31 @@ module.exports = {
                 allowNull: true,
                 defaultValue: 0.0
             },
+            order_id: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
+            line_items: {
+                type: Sequelize.STRING, // Change to Sequelize.JSONB if supported
+                allowNull: true
+            },
+            user_id: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
             created_at: {
                 type: Sequelize.DATE,
                 allowNull: false,
-                defaultValue: Sequelize.fn('now')
+                defaultValue: Sequelize.NOW
             },
             updated_at: {
                 type: Sequelize.DATE,
                 allowNull: false,
-                defaultValue: Sequelize.fn('now')
+                defaultValue: Sequelize.NOW
             }
+        }, {
+            tableName: 'events',
+            underscored: true
         });
     },
 

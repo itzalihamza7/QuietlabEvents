@@ -79,6 +79,7 @@ const os = require("os");
 //------------------------------------//
 const sequelize = require('./db/sequelize/sequelize');
 // const consumers = require("./helpers/topics_consumer");
+
 console.log("Server host", os.hostname());
 console.log("database host", sequelize.connection.config.host);
 sequelize.connection.authenticate().then(function () {

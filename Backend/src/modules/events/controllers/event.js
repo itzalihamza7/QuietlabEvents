@@ -12,6 +12,7 @@ const fs = require("fs");
 const sequelize = require('../../../../db/sequelize/sequelize');
 const instSrvcuser = require("../services/event");
 const { Op, fn, col, literal } = require('sequelize');
+const { query } = require("express");
 
 const filter_ids = function (ids) {
     ids = String(ids).trim().toLowerCase();
@@ -49,12 +50,21 @@ const createStore = async (req, res, next) => {
 
 const createEvent = async (req, res, next) => {
     try {
-        const { store_id, offer_name, offer_url, offer_template, visited, purchased, purchase_value, upsell, upsell_value } = req.body;
+        const { store_id, offer_name, offer_url, offer_template, visited, purchased, purchase_value, upsell, upsell_value, order_id, line_items, user_id } = req.body;
 
         // Check if store exists
         const store = await sequelize.models.stores.findByPk(store_id);
         if (!store) {
             return res.status(404).json({ message: 'Store not found' });
+        }
+
+        // Check if an event with the same order_id already exists
+        const existingEvent = await sequelize.models.events.findOne({
+            where: { order_id }
+        });
+
+        if (existingEvent) {
+            return res.status(400).json({ message: 'An event with this Order ID already exists' });
         }
 
         // Create the event
@@ -68,6 +78,9 @@ const createEvent = async (req, res, next) => {
             purchase_value: purchase_value || 0.0,
             upsell: upsell || false,
             upsell_value: upsell_value || 0.0,
+            order_id,
+            line_items,
+            user_id
         });
 
         // Send success response
@@ -77,7 +90,6 @@ const createEvent = async (req, res, next) => {
         return next(error);
     }
 };
-
 
 
 const calculateMetrics = async (req, res, next) => {
@@ -169,12 +181,44 @@ const getAllStores = async (req, res, next) => {
         return next(error);
     }
 };
+
+const updateEvent = async (req, res, next) => {
+    try {
+        const { order_id } = req.query; 
+        const updates = req.body; 
+
+        // Validate that order_id is provided
+        if (!order_id) {
+            return res.status(400).json({ message: 'Order ID is required' });
+        }
+
+        // Find the event with the specified order_id
+        const event = await sequelize.models.events.findOne({
+            where: { order_id }
+        });
+
+        if (!event) {
+            return res.status(404).json({ message: 'Event not found' });
+        }
+
+        // Update the event with new values
+        const updatedEvent = await event.update(updates);
+
+        // Send success response
+        return res.status(200).json(updatedEvent);
+    } catch (error) {
+        // Handle errors
+        return next(error);
+    }
+};
+
     
 
 module.exports = {
     createEvent,
     createStore,
     calculateMetrics,
-    getAllStores
+    getAllStores,
+    updateEvent
 };
 
