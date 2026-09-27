@@ -39,7 +39,7 @@ cd Backend
 npm install
 ```
 
-Create `Backend/.env`:
+Copy `Backend/.env.example` to `Backend/.env` and fill it in:
 
 ```
 DB_NAME=quietlab
@@ -48,7 +48,7 @@ DB_PASS=your-mysql-password
 PORT=5000
 ```
 
-Put the same database settings in `config/config.json`, then create the tables and start the server:
+Put the same database settings in `config/config.json` (used by the migration tool), then create the tables and start the server:
 
 ```bash
 npx sequelize-cli db:migrate

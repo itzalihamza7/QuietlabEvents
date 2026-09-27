@@ -70,7 +70,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-# .env
+.env
 # .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -105,3 +105,6 @@ dist
 
 package-lock.json
 node_modules
+
+# Service account keys
+firebase-adminsdk.json

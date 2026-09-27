@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "root",
-    "password": "1542",
-    "database": "local_quietlab",
+    "username": "your-mysql-user",
+    "password": "your-mysql-password",
+    "database": "quietlab_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
+    "username": "your-mysql-user",
     "password": null,
-    "database": "database_test",
+    "database": "quietlab_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "1542",
-    "database": "production_quietlab",
+    "username": "your-mysql-user",
+    "password": "your-mysql-password",
+    "database": "quietlab_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
