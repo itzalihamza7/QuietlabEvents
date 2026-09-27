@@ -4,8 +4,8 @@
   "description": "this project shows shopify events on dashboard",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production nodemon index.js",
-    "dev": "nodemon index.js"
+    "start": "NODE_ENV=production node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
